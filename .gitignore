@@ -1,6 +1,7 @@
 # Ignore Module_Work folder
-/Starter_code
 .config.js
+# Ignore the config.js file.
+Simple_Map/static/js/config.js
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
