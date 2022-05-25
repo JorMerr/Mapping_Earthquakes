@@ -42,15 +42,15 @@ let airportData = "https://raw.githubusercontent.com/JorMerr/Mapping_Earthquakes
 
 //Grabbing our GeoJSON data.
 d3.json(airportData).then(function(data) {
-    console.log(data);
-    // Creating a GeoJSON layer with the retrieved data.
-    for (var i = 0; i < data.features.length; i++) {
-        var airport = data.features[i];
-        L.geoJSON(airport)
-            .bindPopup("<h2>" + "Airport Code: " + airport.properties.faa + "</h2> <hr> <h3>" + "Airport Name: " + airport.properties.name + "</h3>")
-            .addTo(map);
+    console.log(data, {
+    // We turn each feature into a marker on the map.
+    onEachFeature: function(feature, layer) {
+        console.log(layer);
+        layer.bindPopup("<h2>" + "Airport Code: " + feature.properties.faa + "</h2> <hr> <h3>" + "Airport Name: " + feature.properties.name + "</h3>");
     }
 })
+.addTo(map)
+});
 
 // Add GeoJSON data.
 // let sanFranAirport =
