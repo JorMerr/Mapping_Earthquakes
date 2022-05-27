@@ -1,5 +1,5 @@
 # Ignore Module_Work folder
-.config.js
+**/config.js
 # Ignore the config.js file.
 Simple_Map/static/js/config.js
 
